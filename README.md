@@ -1,86 +1,115 @@
+0x00. AirBnB clone - The console
 
-Background Context
-Welcome to the AirBnB clone project!
-Before starting, please read the AirBnB concept page.
 
-First step: Write a command interpreter to manage your AirBnB objects.
-This is the first step towards building your first full web application: the AirBnB clone. This first step is very important because you will use what you build during this project with all other following projects: HTML/CSS templating, database storage, API, front-end integration…
+# AirBnB Clone Console - Overview
 
-Each task is linked and will help you to:
+![AirBnB Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1280px-Airbnb_Logo_B%C3%A9lo.svg.png)
 
-put in place a parent class (called BaseModel) to take care of the initialization, serialization and deserialization of your future instances
-create a simple flow of serialization/deserialization: Instance <-> Dictionary <-> JSON string <-> file
-create all classes used for AirBnB (User, State, City, Place…) that inherit from BaseModel
-create the first abstracted storage engine of the project: File storage.
-create all unittests to validate all our classes and storage engine
-What’s a command interpreter?
-Do you remember the Shell? It’s exactly the same but limited to a specific use-case. In our case, we want to be able to manage the objects of our project:
+## Project Description
 
-Create a new object (ex: a new User or a new Place)
-Retrieve an object from a file, a database etc…
-Do operations on objects (count, compute stats, etc…)
-Update attributes of an object
-Destroy an object
-Resources
-Read or watch:
+This project marks the initial phase of constructing a comprehensive web application that mirrors the fundamental features of the widely used Airbnb platform. In this preliminary stage, the primary focus is on crafting a command-line interpreter (CLI) designed to manage Airbnb objects. This project forms the groundwork for subsequent development endeavors, encompassing HTML/CSS templating, database storage, API integration, and front-end design.
 
-cmd module
-cmd module in depth
-packages concept page
-uuid module
-datetime
-unittest module
-args/kwargs
-Python test cheatsheet
-cmd module wiki page
-python unittest
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+## Command Interpreter Overview
 
-General
-How to create a Python package
-How to create a command interpreter in Python using the cmd module
-What is Unit testing and how to implement it in a large project
-How to serialize and deserialize a Class
-How to write and read a JSON file
-How to manage datetime
-What is an UUID
-What is *args and how to use it
-What is **kwargs and how to use it
-How to handle named arguments in a function
-Copyright - Plagiarism
-You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
-You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
-You are not allowed to publish any content of this project.
-Any form of plagiarism is strictly forbidden and will result in removal from the program.
-Requirements
-Python Scripts
-Allowed editors: vi, vim, emacs
-All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
-All your files should end with a new line
-The first line of all your files should be exactly #!/usr/bin/python3
-A README.md file, at the root of the folder of the project, is mandatory
-Your code should use the pycodestyle (version 2.8.*)
-All your files must be executable
-The length of your files will be tested using wc
-All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
-All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
-A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
-Python Unit Tests
-Allowed editors: vi, vim, emacs
-All your files should end with a new line
-All your test files should be inside a folder tests
-You have to use the unittest module
-All your test files should be python files (extension: .py)
-All your test files and folders should start by test_
-Your file organization in the tests folder should be the same as your project
-e.g., For models/base_model.py, unit tests must be in: tests/test_models/test_base_model.py
-e.g., For models/user.py, unit tests must be in: tests/test_models/test_user.py
-All your tests should be executed by using this command: python3 -m unittest discover tests
-You can also test file by file by using this command: python3 -m unittest tests/test_models/test_base_model.py
-All your modules should have a documentation (python3 -c 'print(__import__("my_module").__doc__)')
-All your classes should have a documentation (python3 -c 'print(__import__("my_module").MyClass.__doc__)')
-All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
-We strongly encourage you to work together on test cases, so that you don’t miss any edge case
+The command interpreter, which is implemented within `console.py`, acts as a versatile utility for interaction with and control of Airbnb objects. It empowers users to carry out various actions on these objects, encompassing their creation, retrieval, modification, and removal. The interpreter adopts a Shell-like interface and provides a set of commands for manipulation of Airbnb objects.
 
+## Getting Started
+
+To commence using the Airbnb Clone command interpreter, adhere to these steps:
+
+1. Clone the repository to your local machine:
+
+   ```bash
+   git clone https://github.com/your-username/AirBnB_clone.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd AirBnB_clone
+   ```
+
+3. Launch the command interpreter:
+
+   ```bash
+   ./console.py
+   ```
+
+## Usage Instructions
+
+Once the command interpreter is up and running, you can employ the following commands to administer Airbnb objects:
+
+- `create`: Generate a new Airbnb object (e.g., User, State, City, Place).
+  Example:
+  ```bash
+  (hbnb) create User
+  ```
+
+- `show`: Retrieve details about a particular object by specifying its class name and ID.
+  Example:
+  ```bash
+  (hbnb) show User 1234-5678-9012
+  ```
+
+- `all`: List all objects of a given class or list all objects if no class is specified.
+  Example:
+  ```bash
+  (hbnb) all
+  (hbnb) all State
+  ```
+
+- `update`: Modify attributes of an object by specifying its class name, ID, attribute name, and attribute value.
+  Example:
+  ```bash
+  (hbnb) update User 1234-5678-9012 first_name "John"
+  ```
+
+- `destroy`: Erase an object by specifying its class name and ID.
+  Example:
+  ```bash
+  (hbnb) destroy Place 9876-5432-1098
+  ```
+
+- `quit` or `EOF`: Exit the command interpreter.
+  Example:
+  ```bash
+  (hbnb) quit
+  ```
+
+- `help`: Present a list of available commands or request assistance for a specific command.
+  Example:
+  ```bash
+  (hbnb) help
+  (hbnb) help show
+  ```
+
+## Usage Examples
+
+Here are some examples of how to employ the Airbnb Clone command interpreter:
+
+1. Create a new User object:
+   ```bash
+   (hbnb) create User
+   ```
+
+2. List all City objects:
+   ```bash
+   (hbnb) all City
+   ```
+
+3. Update the name attribute of a Place object:
+   ```bash
+   (hbnb) update Place 1234-5678-9012 name "Cozy Cabin"
+   ```
+
+4. Delete a State object:
+   ```bash
+   (hbnb) destroy State 9876-5432-1098
+   ```
+
+5. Exit the command interpreter:
+   ```bash
+   (hbnb) quit
+   ```
+
+The Airbnb Clone command interpreter furnishes a user-friendly approach to administer and manipulate Airbnb objects, establishing itself as an indispensable tool for the development of the full-featured Airbnb clone web application.
